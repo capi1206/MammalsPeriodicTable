@@ -1,0 +1,18 @@
+.App {
+
+  display : flex;
+  flex-direction: column;
+}
+.container {
+
+  display : flex;
+  flex-direction: row;
+}
+h1{
+  padding-left: 1em;
+}
+.left-dashboard {
+
+  height : 100%;
+  width :20%
+}

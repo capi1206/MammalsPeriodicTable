@@ -1,0 +1,18 @@
+.family-token{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(196, 187, 169)
+}
+.to-come{
+    width: 40px;
+    height: 40px;
+    background-image: url(UnderConstruction.svg.png);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+}
+.family-detail{
+    width: 100%;
+    height: 3em;
+    order: 100;
+}
