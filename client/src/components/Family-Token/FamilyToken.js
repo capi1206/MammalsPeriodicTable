@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import './styles.css';
+import './styles/styles.css';
+import FamilyDetail from "../FamilyDetail/FamilyDetail.js"
+
 
 export default function FamilyToken({family}) {
 
@@ -8,14 +10,14 @@ export default function FamilyToken({family}) {
 
   
  
-    return (family !== 'to-come' ?
+    return (family.family !== 'to-come' ?
       <>
 
-       <div className="family-token" onClick = {() => setToggled(true)}>
-          {family}</div>;
+       <div className ={family.family} onClick = {() => setToggled(true)}/>
+         
      
        
-      {toggled && <div className="family-detail">{family}</div>}
+      {toggled && <FamilyDetail className= 'family-detail' family={family} />}
       </> :
       <div className="to-come" />
     )

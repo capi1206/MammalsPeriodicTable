@@ -1,0 +1,19 @@
+.family-detail{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    column-gap:.03em;
+   
+    order: 100;
+}
+.Balaneidae-detail{
+    
+    width: 70px;
+    height: 80px;
+    background-image: url(01c_Balaneidae-Ficha_Click.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+}

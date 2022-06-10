@@ -3,20 +3,17 @@ import './styles.css';
 import FamilyToken from '../Family-Token/FamilyToken';
 
 export default function FamiliesRow({content}) {
- function handleClick(fam){
-   return<div className="family-display">
-     you clicked on family {fam}!
-   </div>
- }
+
+const genId =()=> Math.floor(Math.random() *10000);
 
   return (
     <div className="family-row">
-        {content.map(({family, id}) => (
-          (family ) ?
+        {content.map((family) => (
+          (family.family ) ?
             <FamilyToken
            
-              key={id}
-              family={family}>yo</FamilyToken>
+              key={genId().toString()}
+              family={family}/>
              :
             <div className='blank'/>
         ))}

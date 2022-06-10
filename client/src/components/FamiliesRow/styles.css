@@ -2,11 +2,13 @@
     
     display : flex;
     flex-flow: row wrap;
+    width: 1200px;
+    column-gap:.03em;
+  
     
-    width: 350px;
     
   }
   .blank{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 55px;
 }

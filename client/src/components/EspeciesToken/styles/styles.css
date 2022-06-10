@@ -1,0 +1,61 @@
+.especies-BowheadWhale{
+    
+    width: 50px;
+    height: 55px;
+    background-image: url(02_Bowhead-Whale-Card.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+
+}
+.especies-NorthAtlanticRightWhale{
+    
+    width: 50px;
+    height: 55px;
+    background-image: url(03_North-Atlantic-Right-Whale.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+
+}
+.especies-NorthPacificRightWhale{
+    
+    width: 50px;
+    height: 55px;
+    background-image: url(04_North-Pacific-Right-Whale.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+
+}
+.especies-SouthernRightWhale{
+
+    width: 50px;
+    height: 55px;
+    background-image: url(05_Southern-Right-Whale.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+}
+.BowheadWhale-detail{
+  
+  background-image: url(02_Bowhead-Whale-Card.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:7%;
+
+}
+.NorthAtlanticRightWhale-detail{
+
+}
+.NorthPacificRightWhale-detail{
+
+}
+.SouthernRightWhale-detail{
+
+}
