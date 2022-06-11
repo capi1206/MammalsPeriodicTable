@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import './styles/styles.css';
+
 
 export default function EspeciesToken({especies}) {
 
