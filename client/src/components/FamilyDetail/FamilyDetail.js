@@ -1,6 +1,7 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
 
-import './styles/styles.css'
+
+import '../styles/styles.css';
 import GenusToken from '../GenusToken/GenusToken.js';
 
 const genId = ()=>Math.floor(Math.random()*10000);

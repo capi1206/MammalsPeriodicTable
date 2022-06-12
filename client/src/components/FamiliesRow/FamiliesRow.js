@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles.css';
+import '../styles/styles.css';
 import FamilyToken from '../Family-Token/FamilyToken';
 
 export default function FamiliesRow({content}) {

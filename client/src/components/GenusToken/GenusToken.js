@@ -1,5 +1,5 @@
 import React from 'react'
-import './styles/styles.css'
+import '../styles/styles.css'
 import EspeciesToken from '../EspeciesToken/EspeciesToken.js'
 const genId =()=> Math.floor(Math.random() *10000);
 

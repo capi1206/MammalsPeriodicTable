@@ -1,0 +1,262 @@
+.family-row{
+    
+    display : flex;
+    flex-flow: row wrap;
+    width: 1200px;
+    column-gap:.03em;
+    animation: fam-row 1s ease-in;
+
+   } 
+@keyframes fam-row{
+    0% {
+
+        opacity: 0;
+     
+
+          }
+    80% {
+        opacity :1.5;
+    }      
+    100% {
+        opacity: 1;
+        
+        
+    }
+}
+.family-detail{
+    transition: all 0.5s ease-in 300ms;
+    scroll-behavior: smooth;
+    position: relative;
+}
+@keyframes fam-detail{
+    0% {
+        transform: scale(0);
+        opacity: 0;
+     
+
+          }
+    100% {
+        transform: scale(1);
+        
+        
+    }
+}
+  .blank{
+    width: 50px;
+    height: 55px;
+}
+.family-token{
+    width: 50px;
+    height: 55px;
+    background-color: rgb(45, 45, 43);
+    border-radius:7%;
+}
+.Balaneidae{
+
+    width: 50px;
+    height: 55px;
+    background-image: url(01a_Balaneidae-Ficha.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+    transition:  3s cubic-bezier(0.09, 0.08, 0, 0.95) 0.2s;
+}
+
+@keyframes right-to-left {
+  
+}
+.Balaneidae:hover {
+    background-image: url(01b_Balaneidae-Ficha_Hoover.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  
+
+
+}
+
+.to-come{
+    width: 50px;
+    height: 55px;
+    background-image: url(UnderConstruction.svg.png);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  filter: saturate(10%);
+  background-color: darkolivegreen;
+  border-radius:7%;
+}
+.family-detail{
+    width: 100%;
+    padding-left: 1.5em;
+    padding: 11px;
+    order: 100;
+    animation: detail-load 2s ease-out;
+}
+@keyframes detail-load {
+  0%{
+    transform: scale(0);
+    opacity:0  }
+  80%{
+    transform: scale(1.1);
+    opacity:0.8
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.family-detail{
+    width: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    height: fit-content;
+    column-gap:.7em;
+    row-gap:.7em;
+  
+    order: 100;
+}
+.Balaena-genus{
+  order: 1;
+}
+.Eubalaena-genus{
+  order: 3;
+}
+.Balaneidae-detail{
+  margin-left: 5px;
+  width: 120px;
+  height: 120px;
+  border-radius: 3%;
+  margin-bottom: 5px;
+   
+    background-image: url(01c_Balaneidae-Ficha_Click.jpg);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+  
+  
+  
+}
+
+
+.species-BowheadWhale{
+    
+
+  background-image: url(02_Bowhead-Whale-Card.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:7%;
+  animation: fam-row 
+}
+.species-NorthAtlanticRightWhale{
+  
+
+  background-image: url(03_North-Atlantic-Right-Whale.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:7%;
+
+}
+.species-NorthPacificRightWhale{
+  
+
+  background-image: url(04_North-Pacific-Right-Whale.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:7%;
+
+}
+.species-SouthernRightWhale{
+
+
+  background-image: url(05_Southern-Right-Whale.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:7%;
+}
+
+.BowheadWhale-detail{
+  width: 45em;
+  height: 30em;
+  background-image: url(02a_Bowhead-Whale-Card.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:0.5%;
+  order :2;
+  animation: left-right 2s ease-in;
+}
+@keyframes left-right {
+    0% {
+    transform: translateX(-100%)}
+
+    100%{ transform : tanslateX(0)}
+}
+.NorthAtlanticRightWhale-detail{
+
+  width: 45em;
+  height: 30em;
+  background-image: url(03a_North-Atlantic-Right-Whale.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:0.5%;
+  order :4;
+}
+.NorthPacificRightWhale-detail{
+  width: 45em;
+  height: 30em;
+  background-image: url(04a_North-Pacific-Right-Whale.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:0.5%;
+  order :4;
+
+}
+.SouthernRightWhale-detail{
+  width: 45em;
+  height: 30em;
+  background-image: url(05a_Southern-Right-Whale.jpg);
+  background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; 
+  border-radius:0.5%;
+  order :4;
+
+}
+.genus-container div{
+  margin-left: 5px;
+  width: 120px;
+  height: 120px;
+  border-radius: 3%;
+  margin-bottom: 5px;
+}
+
+.genus-container{
+    display: flex;
+    flex-direction: row;
+    height: 115px;
+}
+.genus-Balaena{
+    width: 70px;
+    height: 80px;
+    background-image: url(Balaena-genus.png);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+}
+.genus-Eubalaena{
+    width: 70px;
+    height: 80px;
+    background-image: url(Eubalaena-genus.png);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; 
+    border-radius:7%;
+}
