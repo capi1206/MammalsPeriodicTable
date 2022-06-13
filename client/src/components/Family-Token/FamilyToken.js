@@ -23,16 +23,7 @@ export default function FamilyToken({family}) {
      
        
        {toggled && <FamilyDetail ref= {testRef} className= 'family-detail' family={family} />} 
-{/* 
-      <CSSTransition
-  in={toggled}
-  timeout={100}
-  classNames="display"
-  unmountOnExit
->
-<FamilyDetail ref= {testRef} className= 'family-detail' family={family} />
 
-</CSSTransition> */}
       </> :
       <div className="to-come" />
     )
