@@ -7,19 +7,23 @@ const speciesSchema = new mongoose.Schema({
         required : true
 
     },
+    order : {
+        type : Number,
+    removed : true
+    },
     genus : {
         type : String,
-        required : true
+        required : false
 
     },
     name : {
         type : String,
-        required : true,
+        required : false,
 
     },
     free : {
         type : Boolean,
-        required: true,
+        required: false,
     }
 
 })

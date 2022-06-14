@@ -19,7 +19,8 @@ routes.post('/', async (req, res) => {
         family: req.body.family,
         genus: req.body.genus ,
         name : req.body.name,
-        free: req.body.free
+        free: req.body.free,
+        order: req.body.order
     });
     try{
         const newSpecies = await species.save();
@@ -28,5 +29,30 @@ routes.post('/', async (req, res) => {
         res.status(400).json({message : e.message});
     }
 })
+
+//put request
+
+routes.put('/' , async (req, res) => {
+    Species.findById(req.params._id).then((model) => {
+        return Object.assign(model, {free: true});
+    }).then((model) => {
+        return model.save();
+    }).then((updatedModel) => {
+        res.json({
+            msg: 'model updated',
+            updatedModel
+        });
+    }).catch((err) => {
+        res.send(err);
+    });
+})
+
+routes.delete('/', )
+
+
+
+
+
+
 
 module.exports = routes;

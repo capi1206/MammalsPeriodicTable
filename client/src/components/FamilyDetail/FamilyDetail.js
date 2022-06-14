@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-
+import { mammalsService } from '../../services/mammalsService.js'
 
 import '../styles/styles.css';
-import GenusToken from '../GenusToken/GenusToken.js';
+
 
 const genId = ()=>Math.floor(Math.random()*10000);
 
@@ -10,34 +10,33 @@ export default function FamilyDetail({family}) {
   
   
   const[toggled, setToggled] = useState(false); 
-  const[animal, setAnimal] = useState('');   
+  const[animal, setAnimal] = useState(null);   
   function handleClick(elem){
-    setAnimal(elem);
-    setToggled(true);
-    console.log(animal);
+
+    if(elem.free){
+      setAnimal(elem);
+      setToggled(true);
+    }
+    else mammalsService.updateSpecies(elem);
 
   }
   return (<>
     <div className="family-detail">
-      <div className={family.family +'-detail'}/>
+      <div className={family.name +'-detail'}/>
       {family.genus.map((genus) => (
             <div className={"genus-container "+genus.name+"-genus"}>
               <div className={"genus-"+genus.name}/>
               {genus.species.map((elem) => (
-                  <div className ={"species-"+elem} onClick = {() => handleClick(elem)/*setToggled(true)*/}/>
+                  <div className ={"species-"+elem.name} onClick = {() => handleClick(elem)/*setToggled(true)*/}/>
                   ))}
                   
 
 
                  
             </div>
-            // <GenusToken
-           
-            //   key={genId().toString()}
-            //   genus={genus}/>
               
         ))}
-     {toggled && <div className={animal +'-detail'}/>}    
+     {toggled && <div className={animal.name +'-detail'}/>}    
     </div>
     
     </>
