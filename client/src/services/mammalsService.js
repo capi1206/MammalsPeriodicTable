@@ -1,9 +1,9 @@
 const serv_URL = 'http://localhost:3000/species';
 
-function getAllSpecies() {
+async function getAllSpecies() {
     return fetch(serv_URL)
         .then((res)=>res.json())
-        .then((dt)=>dt)
+        .then((dt)=> dt)
         .catch((e)=> e);
 }
 

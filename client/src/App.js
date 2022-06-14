@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Table from './components/Table/Table';
 
-import familiesRows from './listFamiliesRow.js'
+// import familiesRows from './listFamiliesRow.js'
 import { mammalsService } from './services/mammalsService.js'
 import { useCallback, useState, useEffect } from 'react'
 
@@ -15,20 +15,22 @@ function App() {
   
   
   const getAllMammals = async () => {
-    const { res, error } = await mammalsService.getAllSpecies();
+    console.log('llama getAllMammals')
+    let { res, error } = await mammalsService.getAllSpecies();
+ 
 
     //cleaning up data in the database
-  try{
-    res= await res.filter(elem => elem.order != undefined).filter(animal => !(animal.family =='36' && animal.order==7) );}
-    catch(e){console.log(e)}
-  
+ 
+    res = res.filter(elem => elem.order != undefined).filter(animal => !(animal.family =='36' && animal.order==7) );
+    
+    console.dir(res);console.log(error);
   //organizing mammals species into a tree structure
     if(!error){
-      console.log('entra aca')
+    
       let fams =new Set();
       let animals={ families :[]}
       for( let elem of res){ if(elem.family)fams.add(elem.family)}
-      console.log('families' + fams);
+  
       for( let fam of fams){  
                             let gens= new Set();
                           for( let animal of res.filter(ele=>ele.family === fam)){
@@ -40,9 +42,9 @@ function App() {
                           }
                           animals.families.push({ 'order': res.find(ele => ele.family==fam).order, 'name' : fam, 'genus' : aux});
                           }
-                          
-                        setMammals(animals);
-                        console.log('animals here' + animals);
+                        console.log('animals array? ',Array.isArray(animals))  
+                        setMammals([...mammals, ...animals.families]);
+                        
                         }
     else{
       setError(res);
@@ -80,7 +82,8 @@ function App() {
       <div className="left-dashboard">
         
       </div>
-      <Table families = {mammals} />
+      {mammals.length >0? <Table families = {mammals} />:
+      <div>LOading</div>} 
     </div>
     {/* {  console.log(mammals)} */}
   </div>  
