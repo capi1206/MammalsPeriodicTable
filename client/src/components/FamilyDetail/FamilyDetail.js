@@ -12,7 +12,7 @@ export default function FamilyDetail({family}) {
   const[toggled, setToggled] = useState(false); 
   const[animal, setAnimal] = useState(null);   
   function handleClick(elem){
-
+    console.log('entra ',elem)
     if(elem.free){
       setAnimal(elem);
       setToggled(true);
@@ -22,7 +22,7 @@ export default function FamilyDetail({family}) {
   }
   return (<>
     <div className="family-detail">
-      <div className={family.name +'-detail'}/>
+      <div className={'f'+family.name +'-detail'}/>
       {family.genus.map((genus) => (
             <div className={"genus-container "+genus.name+"-genus"}>
               <div className={"genus-"+genus.name}/>
