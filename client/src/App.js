@@ -10,20 +10,20 @@ import { useCallback, useState, useEffect } from 'react'
 function App() {
 
 
-  const [mammals, setMammals] = useState([]);
+  const [mammals, setMammals] = useState({});
   const [error, setError] = useState(null);
   
   
   const getAllMammals = async () => {
-    console.log('llama getAllMammals')
+   
     let { res, error } = await mammalsService.getAllSpecies();
  
 
     //cleaning up data in the database
  
-    res = res.filter(elem => elem.order != undefined).filter(animal => !(animal.family =='36' && animal.order==7) );
+    res = res.filter(elem => elem.order != undefined).filter(animal => !(animal.family =='36' && (animal.order==7 || animal.name == undefined)) );
     
-    console.dir(res);console.log(error);
+    console.dir(res);
   //organizing mammals species into a tree structure
     if(!error){
     
@@ -41,9 +41,10 @@ function App() {
                             aux.push({ name : genus , species : res.filter(ele => ele.family ===fam && ele.genus === genus)})
                           }
                           animals.families.push({ 'order': res.find(ele => ele.family==fam).order, 'name' : fam, 'genus' : aux});
-                          }
-                        console.log('animals array? ',Array.isArray(animals))  
-                        setMammals([...mammals, ...animals.families]);
+                          animals.families.sort((a,b) => a.order - b.order);
+                        }
+                        
+                        setMammals(animals);
                         
                         }
     else{
@@ -82,10 +83,10 @@ function App() {
       <div className="left-dashboard">
         
       </div>
-      {mammals.length >0? <Table families = {mammals} />:
+      {(mammals.families &&mammals.families.length >0)? <Table families = {mammals} />:
       <div>LOading</div>} 
     </div>
-    {/* {  console.log(mammals)} */}
+   
   </div>  
   );
 }

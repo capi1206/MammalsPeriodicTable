@@ -71,7 +71,7 @@ function handleClick(family, rowId){
        
       
        { 
-       toFamiliesRow(families).map((row) => (
+       toFamiliesRow(families.families).map((row) => (
           
           <div className="family-row">
           {
